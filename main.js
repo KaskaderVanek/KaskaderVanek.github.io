@@ -1,5 +1,3 @@
-
-
 // Доходы
 const incomeSalary = document.querySelector('#income-salary')
 const incomeFreelance = document.querySelector('#income-freelance')
@@ -17,32 +15,37 @@ const totalMonthInput = document.querySelector('#total-month')
 const totalDayInput = document.querySelector('#total-day')
 const totalYearInput = document.querySelector('#total-year')
 
-
 // Копилка
 const moneyBox = document.querySelector('#money-box-range')
 const accumulationInput = document.querySelector('#accumulation')
 const spend = document.querySelector('#spend')
 
-
-let totalMonth, totalDay, totalYear;
+let totalMonth, totalDay, totalYear
 let accumulation, totalPrecents
-
-
 
 const inputs = document.querySelectorAll('.input')
 for (input of inputs) {
-  input.addEventListener('input', () => {
-    moneyBox.disabled = false
-    countingTotalMoney()
-    countingBoxingMoney()
+  input.addEventListener('input', (e) => {
+    if (e.target.type != 'text') {
+      moneyBox.disabled = false
+      countingTotalMoney()
+      countingBoxingMoney()
+    }
   })
 }
 
 countingTotalMoney = () => {
-  totalMonth = (Number(incomeSalary.value) + Number(incomeFreelance.value) + Number(incomeExtra1.value) + Number(incomeExtra2.value)) - (Number(costsFlat.value) + Number(costsHouse.value) + Number(costsTransport.value) + Number(costsCredit.value))
+  totalMonth =
+    Number(incomeSalary.value) +
+    Number(incomeFreelance.value) +
+    Number(incomeExtra1.value) +
+    Number(incomeExtra2.value) -
+    (Number(costsFlat.value) +
+      Number(costsHouse.value) +
+      Number(costsTransport.value) +
+      Number(costsCredit.value))
   totalMonthInput.value = totalMonth
 }
-
 
 moneyBox.addEventListener('input', () => {
   totalPrecents = Number(moneyBox.value)
@@ -52,13 +55,13 @@ moneyBox.addEventListener('input', () => {
 
 countingBoxingMoney = () => {
   if (totalPrecents > 0) {
-   accumulation = Math.trunc((totalMonth * totalPrecents) / 100)
-   accumulationInput.value = accumulation
-   spend.value = Math.trunc(totalMonth - accumulation)
-   totalYear = accumulation * 12
-   totalDay = Math.trunc(Number(spend.value) / 30)
-   totalDayInput.value = totalDay
-   totalYearInput.value = totalYear
+    accumulation = Math.trunc((totalMonth * totalPrecents) / 100)
+    accumulationInput.value = accumulation
+    spend.value = Math.trunc(totalMonth - accumulation)
+    totalYear = accumulation * 12
+    totalDay = Math.trunc(Number(spend.value) / 30)
+    totalDayInput.value = totalDay
+    totalYearInput.value = totalYear
   } else {
     countingTotalMoney()
     totalDay = Math.trunc(totalMonth / 30)
@@ -67,5 +70,3 @@ countingBoxingMoney = () => {
     accumulationInput.value = 0
   }
 }
-
-
