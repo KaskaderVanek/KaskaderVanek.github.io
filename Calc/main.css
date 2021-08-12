@@ -1,0 +1,276 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #e5e5e5;
+  margin: 0;
+}
+
+.main-wrapper {
+  /* display: flex;
+    flex-direction: column; */
+  /* width: 100%; */
+  max-width: 900px;
+  margin: 100px;
+}
+
+.main-wrapper h1 {
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 46px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 60px;
+}
+
+h6 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputs-block-double {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type='number'],
+input[type='text'] {
+  height: 25px;
+  width: 130px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.inputs-wrapper input[type='number'] {
+  width: 70px;
+}
+
+.inputs-block {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
+
+.inputs-block-column:first-child {
+  width: 220px;
+  margin-right: 30px;
+}
+
+.inputs-block-column:last-child {
+  margin-left: 50px;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.inputs-wrapper {
+  margin-top: 30px;
+}
+
+.inputs-block-double {
+  margin-bottom: 20px;
+}
+
+.inputs-block-double:last-child {
+  margin-bottom: 0px;
+}
+
+.inputs-block-column .total-numb input {
+  width: 200px;
+}
+
+.total-numb {
+  margin-bottom: 20px;
+}
+
+.total-numb:last-child {
+  margin-bottom: 0px;
+}
+
+.total-numb h6 {
+  margin-bottom: 10px;
+}
+
+.total-numb input {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 55px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  background-color: transparent;
+  box-shadow: none;
+  padding-left: 0;
+  border: 0;
+}
+
+#accumulation,
+#spend {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+
+.total-numb input::placeholder {
+  color: #000000;
+}
+
+.range-block {
+  max-width: 592px;
+  margin-bottom: 15px;
+}
+
+.range-block h6 {
+  margin-bottom: 10px;
+}
+
+#slider-range {
+  height: 2px;
+  background-color: #d1d1d1;
+  border: none;
+}
+
+.ui-slider-handle.ui-corner-all.ui-state-default {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  top: -9px;
+  outline: none;
+}
+
+.ui-slider-handle.ui-corner-all.ui-state-default:hover {
+  border: none;
+}
+
+.ui-slider-handle.ui-corner-all.ui-state-default:active {
+  background-color: #ffffff;
+}
+
+.ui-slider-range.ui-corner-all.ui-widget-header.ui-slider-range-min {
+  background-color: #464646;
+}
+
+.slider-range-result {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slider-range-result input {
+  border: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  padding: 0;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  box-shadow: none;
+  text-align: center;
+}
+
+.result-block {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 460px;
+}
+
+.result-block .total-numb {
+  display: flex;
+  align-items: baseline;
+}
+
+.result-block .total-numb h6 {
+  margin-right: 10px;
+}
+
+.result-block .total-numb span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .main-wrapper {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 20px;
+  }
+
+  .main-wrapper h1 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .inputs-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .inputs-wrapper {
+    margin-top: 20px;
+  }
+
+  .inputs-block-column,
+  .inputs-block-column:first-child,
+  .inputs-block-column:last-child {
+    margin: 0;
+    margin-bottom: 50px;
+    width: 295px;
+  }
+
+  .total-numb {
+    text-align: start;
+  }
+
+  .total-numb .total {
+    width: 295px;
+  }
+  .inputs-wrapper input[type='number'] {
+    width: 100px;
+    text-align: center;
+  }
+
+  .result-block .total-numb {
+    display: block;
+  }
+
+  .result-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex-direction: column;
+  }
+  #money-box-range {
+    width: 250px;
+  }
+
+  .range-block {
+    text-align: center;
+  }
+}
